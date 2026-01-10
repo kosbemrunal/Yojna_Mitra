@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register • Yojna Mitra</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-card">
+        <h2>📝 Create Account</h2>
+
+        <form method="POST">
+
+            <input type="text" name="username" placeholder="Create username" required>
+
+            <input type="password" name="password" placeholder="Create password" required>
+
+            <button type="submit" class="auth-btn">Register</button>
+        </form>
+
+        <p class="auth-switch">
+            Already have an account?
+            <a href="/login">Login</a>
+        </p>
+    </div>
+
+</body>
+</html>

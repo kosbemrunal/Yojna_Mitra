@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yojna Mitra Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="chat-body">
+
+<div class="sidebar">
+    <h1 class="logo">Yojna Mitra</h1>
+
+    <button onclick="window.location='/new_chat'" class="side-btn">
+        🆕 New Chat
+    </button>
+
+    <p class="lang-info">
+        💬 The bot will reply in the same language you ask your question in.
+    </p>
+
+    
+
+    <a href="/logout" class="logout-btn">Logout</a>
+</div>
+
+<div class="chat-container">
+
+    <div class="chat-box">
+        {% for msg in chat_history %}
+            <div class="chat-msg {{ msg.sender }}">
+                {{ msg.text | safe }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <form method="POST" class="input-area">
+        <input type="text" name="message" placeholder="Type your question..." required>
+        <button class="send-btn">Send</button>
+    </form>
+
+</div>
+
+
+</body>
+</html>

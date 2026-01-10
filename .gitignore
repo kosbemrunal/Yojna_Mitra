@@ -1,0 +1,17 @@
+# Environment Variables
+.env
+
+# Virtual Environment
+venv/
+
+# SQLite Database
+database.db
+
+# Python cache files
+__pycache__/
+
+# VS Code settings
+.vscode/
+
+# OS junk files
+.DS_Store

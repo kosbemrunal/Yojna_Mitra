@@ -118,22 +118,48 @@ body {
 }
 
 /* ---------- MOBILE ---------- */
+
 @media (max-width: 768px) {
+
     body {
         flex-direction: column;
+        height: 100svh; /* IMPORTANT for mobile browsers */
     }
 
     .sidebar {
         width: 100%;
+        padding: 16px;
         border-right: none;
         border-bottom: 1px solid #30363d;
     }
 
     .main-chat {
-        height: calc(100vh - 200px);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 0; /* CRITICAL FIX */
+    }
+
+    .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 15px;
+    }
+
+    .chat-input {
+        position: sticky;
+        bottom: 0;
+        background: #161b22;
+        padding: 12px;
+        border-top: 1px solid #30363d;
     }
 
     .chat-bubble {
-        max-width: 90%;
+        max-width: 92%;
+        font-size: 15px;
+    }
+
+    .chat-input input {
+        font-size: 16px; /* prevents iOS zoom */
     }
 }

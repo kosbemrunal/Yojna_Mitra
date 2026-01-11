@@ -29,22 +29,24 @@
 
 </div>
 
-<div class="chat-container">
-
-    <div class="chat-box">
+<div class="main-chat">
+    <div class="chat-messages" id="chat-messages">
         {% for msg in chat_history %}
-            <div class="chat-msg {{ msg.sender }}">
-                {{ msg.text | safe }}
+            <div class="chat-bubble {{ 'user' if msg.sender == 'user' else 'bot' }}">
+                {{ msg.text }}
             </div>
         {% endfor %}
     </div>
 
-    <form method="POST" class="input-area">
-        <input type="text" name="message" placeholder="Type your question..." required>
-        <button class="send-btn">Send</button>
+    <form class="chat-input" method="POST">
+        <input type="text" name="message" placeholder="Type your message..." required>
+        <button type="submit">Send</button>
     </form>
-
 </div>
+<script>
+    const chat = document.getElementById("chat-messages");
+    chat.scrollTop = chat.scrollHeight;
+</script>
 
 
 </body>
